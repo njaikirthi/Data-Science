@@ -1,0 +1,25 @@
+from textblob import TextBlob
+print('\n')
+print('Welcome to my sentiment analyzer. My job is to tell your sentiment of your input.')
+print("Let's chat .. :)")
+print('\n')
+a=str(input("Enter what's in your mind : "))
+def mysent(a):
+    blob = TextBlob(a)
+    pol=blob.sentiment.polarity
+    if pol<0:
+        
+        print('\nYou are Negative')
+    elif pol==0:
+        
+        print('\nNuteral- Not bad')
+    elif pol>0:
+        
+        print('\nGood to be Positive')
+
+while True:
+    mysent(a)
+    a=str(input("\nLets start all over again, what's in your mind : "))
+    if a=='bye':
+        print('\nNice chatting with you! Bye')
+        break
